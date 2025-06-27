@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <!-- Header  -->
+     <div class="header">
+        <div class="logoSloganWrapper"><!--Wrapper for styling the logo and slogan together-->
+            <img src="logo.png" alt="logo" class="logo">
+            <p id="slogan">Talk less, connect more.</p>
+        </div>
+        <h2 class="heading">My Profile</h2>
+        <p class="joinBuzzText">Join the Buzz!</p>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+
+        <!--Navigation Bar-->
+        <button class="menu-toggle" onclick="toggleNavbar()">☰ Menu</button><!--Menu button for smaller screens-->
+        <div class="navbar"><!--Navigation bar with links to other pages-->
+            <a href="HomePage.html" class="link">🏠Home</a>
+            <a href="Notifications.html" class="link">🔔 Notifications</a>
+            <a href="ProfilePage.html" class="link">👤My Profile</a>
+            <div class="searchBar"><!--Search bar section for finding friends, posts, etc-->
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Find" id="searchInput">
+            </div>
+        </div>
+
+        <!-- User's profile and about -->
+        <div class="wrapper"><!--Wrapper div that wraps profile area and about area -->
+            <!--Profile Area -->
+            <div class="profileArea">
+                <img src="pp.jpg" alt="profile picture" class="profilePic"><!--User's profile picture-->
+
+                <!--Profile information like name, location, user statistics-->
+                <div class="profileDetails">
+                    <div class="profileInfo"><!--name and location-->
+                        <h5 class="userName" id="profName">@ Josh Cane</h5>
+                        <p id="locationText">📍Nairobi, Kenya</p>
+                    </div>
+                    <div class="userStats"><!-- User's number of posts, followers and comments -->
+                        <div class="userStat"><a class="number">10</a><a class="label">Posts</a></div>
+                        <div class="userStat"><a class="number" onclick="openFriendsModal()">100</a><a class="label" onclick="openFriendsModal()">Friends</a></div>
+                        <div class="userStat"><a class="number" onclick="openCommentsModal()">20</a><a class="label" onclick="openCommentsModal()">Comments</a></div>
+                    </div>
+                </div><!--end of profile details  -->
+            </div><!--end of profile area -->
+            
+            
+            <!--User's about information section -->
+            <div class="aboutSection">
+                <div class="AboutMeContainer"><p class="AboutText"><b>About:</b></p><p id="aboutText">HEY! I USE MINGLE</p></div><!--User's about information-->
+                <div class="editButton"><button class="editBtn" onclick="openModal()">Edit Profile</button></div><!--Button that opens the edit modal where user can change their profile information-->
+            </div>
+        </div><!--end of Wrapper Div  -->
+          
+        <div class="Post-and-friend-wrapper">
+            <!--User's posts-->
+        <div class="posts"><!--Container that holds all posts-->
+            <h4>My Posts</h4>
+                <div class="post"><!--First post-->
+                <div class="postText">
+                    <p>My First Post! 🥹</p><!--Post Text-->
+                    <button class="deleteBtn">Delete Post</button><br><!--Button for deleting posts-->
+                    <span style="font-size: 14px;" class="timeline">Timeline</span><!--The time the post was made-->
+                    <a href="#" class="viewLikes" onclick="openLikesModal()">View all likes →</a><!--Post likes-->
+                    <a href="#" class="viewComments" onclick="openCommentsModal()">View comments →</a><!--Post comments-->
+                </div>
+                </div>  
+                <div class="post"><!--Second post-->
+                <div class="postText">   
+                    <p>Beatiful day to be coding a website! 💻</p>
+                    <button class="deleteBtn">Delete Post</button><br>
+                    <span style="font-size: 14px;" class="timeline">Timeline</span>
+                    <a href="#" class="viewLikes" onclick="openLikesModal()">View all likes →</a>
+                    <a href="#" class="viewComments" onclick="openCommentsModal()">View comments →</a>
+                </div>
+                </div>
+                <div class="post"><!--Third post-->
+                <div class="postText">   
+                    <p>Anyone know how to make a webpage pretty? 😖</p>
+                    <button class="deleteBtn">Delete Post</button><br>
+                    <span style="font-size: 14px;" class="timeline">Timeline</span>
+                    <a href="#" class="viewLikes" onclick="openLikesModal()">View all likes →</a>
+                    <a href="#" class="viewComments" onclick="openCommentsModal()">View comments →</a>
+                </div>
+                </div>
+                <div class="post"><!--Fourth post-->
+                <div class="postText">   
+                    <p>Never mind I figured it out!</p>
+                    <button class="deleteBtn">Delete Post</button><br>
+                    <span style="font-size: 14px;" class="timeline">Timeline</span>
+                    <a href="#" class="viewLikes" onclick="openLikesModal()">View all likes →</a>
+                    <a href="#" class="viewComments" onclick="openCommentsModal()">View comments →</a>
+                </div>
+                </div>
+                
+        </div><!--//end of user's posts -->
+        
+        <!--Section where user can see his/her friends-->
+        <div class="friend-section">
+            <h3 style="color: #4682b4; font-size: 20px;">Friends</h3>
+            <div class="friend"><!--Container that holds the list of friends-->
+                <div class="friendRow"><!--first friend-->
+                    <img src="pp.jpg" alt="profile picture" class="friendPP">
+                    <p class="friendName"><b>@ Alice Watson</b></p>
+                </div>
+                <div class="friendRow"><!--second friend-->
+                    <img src="pp.jpg" alt="profile picture" class="friendPP">
+                    <p class="friendName"><b>@ Bob Marsh</b></p>
+                </div>
+                <div class="friendRow"><!--third friend-->
+                    <img src="pp.jpg" alt="profile picture" class="friendPP">
+                    <p class="friendName"><b>@ Samantha Jones</b></p>
+                </div>
+                <!-- Add more friends here -->
+            </div>  
+            <!-- Link for viewing the entire list  of friends -->
+            <div class="view-more">
+                <a href="#" class="view-more-link" onclick="openFriendsModal()">View all friends →</a>
+            </div>
+        </div>
+        
+        <!--End of page-->
+        <a href="" class="logOutLink">Log Out</a><!--link for logging out-->
+        <footer><p>&copy; 2025 Mingle.  All rights reserved.</p></footer><!--Copyright-->
+    
+    </div><!--End of main content container-->
+    
+   
+    <!--Modal that allows user to edit his/her profile details-->
+    <div class="edit-modal" id="modal"><!--Container that holds the modal content-->
+        <div class="modal-content">
+            <h4>Edit Profile</h4>
+            <label for="fName">Full Name:</label>
+            <input type="text" placeholder="Full Name" value ="Josh Cane" id="fName">
+            <label for="loc">Location:</label>
+            <input type="text" placeholder="Location" id="loc" value="Nairobi, Kenya">
+            <label for="about">About:</label>
+            <textarea placeholder="About" id="about">Web Developer</textarea>
+            <button class="save-Btn" onclick="saveProfile()">Save</button><!--Saves and updates user information-->
+            <button class="close-Btn"  onclick="closeModal()">Close</button><!--Closes the modal and directs back to page-->
+        </div>
+    </div>
+    
+    <!--Modal that allows user to view the list of all of his/her friends-->
+    <div class="friends-modal" id="FriendsListContainer">
+        <div class="modal-content"><!--Container that holds all components of the modal-->
+            <h4>All Friends</h4>
+            <div class="friends-list"><!--Holds the list of usernames-->
+                <div class="friend-item"><!--first friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Alice Watson</a>
+                </div>
+                <div class="friend-item"><!--second friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Bob Marsh</a>
+                </div>
+                <div class="friend-item"><!--third friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Samantha Jones</a>
+                </div>
+                <div class="friend-item"><!--fourth friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Jeffrey Hatchet</a>
+                </div>
+                <div class="friend-item"><!--fifth friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Devi Buchman</a>
+                </div>
+                <!-- Add more friends here-->
+            </div>
+            <button class="close-Btn" onclick="document.getElementById('FriendsListContainer').style.display='none'">Close</button><!--Button that closes the friends' modal and directs user back to main page-->
+        </div>
+    </div>
+
+    <!--Modal that allows user to view all the likes on their post-->
+    <div class="likes-modal" id="likesListContainer">
+        <div class="modal-content"><!--Container that holds all components of the modal-->
+            <h4>Liked by</h4>
+            <div class="friends-list"><!--Holds the list of usernames-->
+                <div class="friend-item"><!--first friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Alice Watson</a>
+                </div>
+                <div class="friend-item"><!--second friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Bob Marsh</a>
+                </div>
+                <div class="friend-item"><!--third friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Samantha Jones</a>
+                </div>
+                <div class="friend-item"><!--fourth friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Jeffrey Hatchet</a>
+                </div>
+                <div class="friend-item"><!--fifth friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Devi Buchman</a>
+                </div>
+                <!-- Add more likes here-->
+            </div>
+            <button class="close-Btn" onclick="document.getElementById('likesListContainer').style.display='none'">Close</button><!--Button that closes the friends' modal and directs user back to main page-->
+        </div>
+    </div>
+
+    <!--Modal that allows user to view all the comments on their post-->
+    <div class="comments-modal" id="commentsListContainer">
+        <div class="modal-content"><!--Container that holds all components of the modal-->
+            <h4>Comments</h4>
+            <div class="friends-list"><!--Holds the list of usernames-->
+                <div class="friend-item"><!--first friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Alice Watson</a>
+                </div>
+                <div class="friend-item"><!--second friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Bob Marsh</a>
+                </div>
+                <div class="friend-item"><!--third friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Samantha Jones</a>
+                </div>
+                <div class="friend-item"><!--fourth friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Jeffrey Hatchet</a>
+                </div>
+                <div class="friend-item"><!--fifth friend-->
+                    <img src="pp.jpg" alt="Friend" class="friend-profile-pic">
+                    <a class="friend-username">@ Devi Buchman</a>
+                </div>
+                <!-- Add more likes here-->
+            </div>
+            <button class="close-Btn" onclick="document.getElementById('commentsListContainer').style.display='none'">Close</button><!--Button that closes the friends' modal and directs user back to main page-->
+        </div>
+    </div>
+    </div>
+        
+<script src="profile.js"></script>
+</body>
+</html>
