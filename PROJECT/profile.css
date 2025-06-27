@@ -1,0 +1,657 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+/* Header that holds the logo, slogan, etc */
+.header{
+    position: relative;
+    margin: 0;
+    background:linear-gradient(to left,#d9ebf9, #4682b4);
+    color: #342620;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;;
+}
+/* Wrapper that styles the logo and slogan */
+.logoSloganWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Logo image */
+.logo{
+    width: 100%;
+    max-width: 180px;
+    margin-left: 10px;
+}
+/* 'Talk less, connect more' slogan */
+#slogan{
+    font-style: italic;
+    color:white;
+    font-size: 19px;
+    position: absolute;
+    top: 62%;   
+    left: 25px;
+}
+/*  Heading of the page */
+.heading{
+    color: #276faa;
+    font-size: 23px;
+}
+/* 'Join the buzz' text */
+.joinBuzzText{
+    font-size: 34px;
+    color: #ff7f50;
+    margin-right: 15px;
+    font-style: normal;
+}
+/* Main Content Container */
+.container{
+    background-color: #d9ebf9;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+/* Menu for smaller screens */
+.menu-toggle {
+    display: none;
+    background-color: #ff7f50;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+/* Navigation bar with options to other pages */
+.navbar{
+    position: relative;
+    margin: 0;
+    background-color: #ff7f50;
+    padding: 20px;
+    width: 100%;
+    max-height: 15px;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+/* Options to other pages */
+.link{
+    font-size: 17px;
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.link:hover{
+    color: #000;
+}
+.search-icon{
+    font-size: 18px;
+}
+/* Search bar section that allows users to search for posts, comments, friends, etc */
+.searchBar input{
+    padding: 6px;
+    border: none;
+    width: 200px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+/* Wrapper div that wraps profile area and about area  */
+.wrapper {
+    display: flex;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1800px;
+    margin:10px;
+    padding: 0 10px;
+}
+/* Section with profile picture and profile details */
+.profileArea{
+    border-radius: 4px;
+    border-bottom: 1px solid #edeef0;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.422);
+    display: flex;
+    background: #fff;
+    flex: 2;
+    min-width: 300px;
+    align-items: center;
+    margin-right: 0;
+}
+/* profile picture */
+.profilePic{
+    margin: 10px;
+    margin-left: 30px;
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.458);
+}
+/* Section for profile information like name, location, user statistics */
+.profileDetails{
+    width: 100%;
+}
+/* Section that contains username and location */
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Logged in user's username */
+#profName{
+    font-size: 22px;
+    margin-top: 5px;
+}
+/* Logged in user's location */
+#locationText{
+    margin-top: -30px;
+    font-size: 18px;
+}
+/* Section for user's number of posts, followers and comments */
+.userStats{
+    display: flex;
+    gap: 20px;
+    color: #000;
+    font-size: 20px;
+    justify-content: center;
+    cursor: pointer;
+}
+.userStat:hover{
+    transform: scale(1.1);
+}
+/* Individual styling for user statistics, i.e. comments, posts, followers */
+.userStat{
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+/* Number of followers, posts, comments */
+.number{
+    font-size: 20px;
+    font-weight: bold;
+}
+/* label for the respective numbers of followers, comments, posts */
+.label{
+    font-size: 14px;
+    color: #000;
+    text-align: center
+}
+/* user's about information section  */
+.aboutSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    flex: 1;
+    min-width: 250px;
+    margin-right: 10px;
+    font-size: 12px;
+}
+/* Container holding user's about information */
+.AboutMeContainer{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.415);
+    background-color: #fff;
+    border-radius: 4px;
+    flex: 1;
+    width: 100%;
+    max-width: 370px;
+    margin-left:0;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+}
+/* user's about information */
+.AboutText, #aboutText{
+    font-size: 15px;
+}
+/* Button that opens the edit modal where user can change their profile information */
+.editBtn{
+    margin: 10px;
+    padding: 6px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff7f50;
+    border-radius: 4px;
+    width: 100px;
+    height: 35px;
+}
+.editBtn:hover{
+    background-color:#fff;
+    border: 1px solid #ff7f50;
+    color: #ff7f50;
+}
+/* Container that holds all posts */
+.posts{
+    width: 100%;
+    max-width: 800px;
+    padding: 15px;
+    border-radius: 5px;
+    background: #fff;
+    display: block;
+    border: 1px solid #e1e2e4;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.415);
+    margin: 0px 0 50px 0;
+    margin-left: 20px;
+}
+/* Individual posts */
+.post{
+    font-size: 18px;
+    background: #fff;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.492);
+}
+/* Post content */
+.postText{
+    font-size: 15px;
+    font-style: normal;
+    text-align: left;
+}
+/* Button for deleting posts */
+.deleteBtn{
+    background: #ff946d;
+    border: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+.deleteBtn:hover{
+    opacity: 0.8;
+}
+/* Link for viewing likes and comments */
+.viewLikes, .viewComments{
+    position: relative;
+    left: 400px;
+    text-decoration: none;
+    color: #276faa;
+}
+.viewLikes:hover, .viewComments:hover{
+    text-decoration: underline;
+}
+/* Section where user can see his/her friends */
+.friend-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.379);
+    max-width: 330px;
+    position: relative;
+    left: 68%;
+    bottom: 680px;
+    margin-left: 20px;
+    width: 100%;
+}
+/* Container that holds the list of friends */
+.friend{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin: 6px;
+    margin-left: 40px;
+}
+/* Individual friend in the list of friends */
+.friendRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+/* profile pictures of user's friends */
+.friendPP{
+    margin: 6px;
+    width: 100%;
+    max-width: 25px;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.379);
+}
+/* usernames of friends */
+.friendName{
+    margin: 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.friendName:hover{
+    transform: translateY(-3px);
+}
+/* Div holding the link for viewing the entire list of friends */
+.view-more {
+    text-align: center;
+    margin-top: 10px;
+}
+/* The link for viewing the entire list of friends */
+.view-more-link {
+    color: #4682b4;
+    text-decoration: none;
+    font-weight: bold;
+}
+.view-more-link:hover {
+    text-decoration: underline;
+}
+/* Log out link */
+.logOutLink{
+    font-size: 17px;
+    margin: 0;
+    color: #4682b4;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.logOutLink:hover{
+    color: #ff7f50;
+}
+/* Modal that allows user to edit his/her profile details */
+.edit-modal{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+    overflow: auto;
+}
+/* Div containing the contents of the edit modal */
+.modal-content{
+    background: #fff;
+    padding: 20px 30px;
+    margin: 100px auto;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    opacity: 1;
+    animation: fadeIn 0.3s ease-in-out;
+}
+/* Modal heading ('Edit Profile') */
+.modal-content,h4{
+    font-size: 20px;
+    color: #4682b4;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Modal labels such as Full Name, Location, etc */
+.modal-content, label{
+    font-size: 15px;
+    display: block;
+    margin-bottom: 5px;
+}
+/* Modal fields for inputting information */
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+.modal-content input:focus,
+.modal-content textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+/* Close and save buttons for edit modal */
+.close-Btn,.save-Btn{
+    padding: 10px 18px;
+    font-size: 1rem;
+    margin-top: 16px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #bdbaba;
+    color: #333;
+}
+.close-Btn:hover,.save-Btn:hover{
+    background-color: #ccc;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Modal that opens when user clicks 'View all friends' */
+.friends-modal,.likes-modal,.comments-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* overlay */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+/* Heading for friends modal */
+.friends-modal, .modal-content, h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: #333;
+}
+/* list of usernames/friends */
+.friends-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow-y: auto;
+}
+/* Individual friend/username */
+.friend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.friend-item:hover{
+    transform: translateY(-2px);
+}
+/* Profile pictures of user friends */
+.friend-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* Usernames in friends' modal */
+.friend-username {
+  font-weight: 500;
+  color: #444;
+  margin: 0;
+}
+
+/* RESPONSIVE DESIGN STYLING */
+@media  (max-width: 768px){
+    /* Main header with logo, slogan, etc */
+    .header{
+        height: 100px;
+    }
+    /*Image of logo */
+    .logo{
+        max-width: 135px;
+    }
+    /* Heading of the page */
+    .heading{
+        font-size: 14px;
+    }
+    /* 'Join the Buzz!' Text styling */
+    .joinBuzzText{
+        font-size: 18px;
+    }
+    /* 'Talk less, connect more' styling */
+    #slogan{
+        font-style: italic ;
+        font-size: 14px;
+    }
+    /* Menu styling for smaller screens */
+    .menu-toggle {
+        display: block;
+        background: #ff7f50;
+        border: none;
+        padding: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .menu-toggle:hover{
+        color: #000;
+    }
+    /* Navigation bar with options to other pages */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #276faa;
+        z-index: 1001;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: auto;
+        overflow: visible;
+        max-height: none;
+        box-shadow: 0 4px 6px rgba(20, 7, 7, 0.395);
+    }
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+    }
+    /* Links to other pages on the navigation bar */
+    .link{
+        display: block;
+        width: 90%;
+        padding: 12px 15px;
+        margin: 8px 0;
+        background-color: white;
+        color: #ff7f50;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .link:hover {
+        background-color: #ff946d;
+        color: #fff;
+    }   
+    /* Wrapper div that wraps profile area and about area */
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Section with user profile pic, location, username, etc */
+    .profileArea{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        right: 25px;
+    }
+    /* User's number of posts, followers and comments */
+    .userStats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    /* Section that hold's user's about information */
+    .aboutSection{
+        margin-left: 0;
+        width: 100%;
+        position: relative;
+        right: 19px;
+    }
+    /* Container that holds the user's about text */
+    .AboutMeContainer{
+        position: relative;
+        top: 10px;
+        width: 100%;
+    }
+    /* Button that user uses to edit their profile details */
+    .editBtn{
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+    /* User's profile picture */
+    .profilePic {
+        margin-bottom: 10px;
+        position: relative;
+        right: 13px;
+    }
+    /* Container that holds all posts */
+    .posts{
+        max-width: 335px;
+        overflow: hidden;
+    }
+    /* Section where user can see his/her friends */
+    .friend-section {
+        max-width: 325px;
+        position: relative;
+        left: unset;
+        bottom: unset;
+        margin-left: 20px;
+        width: 100%;
+    }
+    /* Button that allows user to delete their post */
+    .deleteBtn{
+        position: relative;
+        left: 220px;
+    }
+    /*The time the post was made*/
+    .timeline{  
+        position: relative;
+        left: 250px;
+    }
+    .Post-and-friend-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 480px){
+    .viewLikes, .viewComments{
+        position: relative;
+        right: 500px;
+    }
+}
