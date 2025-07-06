@@ -1,0 +1,66 @@
+body {
+    font-family: Tahoma, sans-serif;
+    background-color: #d9ebf9;
+    margin: 0;
+    padding: 0;
+}
+
+#MainBar {
+    text-align: center;
+    padding: 20px;
+    background-color: #42a5f5;
+    color: white;
+    font-size: 24px;
+    border-bottom: 4px solid #2196f3;
+}
+
+#WebName {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+#slogan {
+    font-size: 16px;
+    font-style: italic;
+}
+
+#VerifyBar {
+    width: 300px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#VerifyBar input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#VerifyButton {
+    background-color: #42a5f5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 95%;
+}
+
+#VerifyButton:hover {
+    background-color: #1e88e5;
+}
+
+#feedbackMessage {
+    margin-top: 10px;
+    font-weight: bold;
+    min-height: 20px;
+}

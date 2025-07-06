@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Mingle | Forgotten password
+        </title>
+        <link rel="stylesheet" href="styleforgpass.css">
+    </head>
+
+    <body style="font-family: tahoma; background-color: #d9ebf9;">
+        <div id="MainBar">
+            <span id="WebName">Mingle</span><br>
+            <span id="slogan">Talk less, connect more</span><br>
+            <span id="WebName">Join the Buzz!</span><br>
+        </div>
+
+        <div id="ForgetBar">
+            <span style="font-weight: bold; color:#fed4c6"> Forgotten password</span><br><br>
+
+            <form id ="ForgotForm" autocomplete="off" method="post" action="/Register/Password_Reset/Forgot_Password/Assets/forgot_password_process.php">
+                <input type="text" name="email" id="emailBox" placeholder="Email"><br><br>
+                <button type="submit" id="SubmitButton" value="Submit">Submit</button><br><br>
+                <div id="message" style="color: red; min-height: 20px; font-weight: bold;">
+                </div>
+            </form>
+            <a href="/Register/SignUp/signUp.html">
+                <span style="font-size:13px;">Sign Up</span><br><br><br>
+            </a>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/Register/Password_Reset/Forgot_Password/Assets/forgot.js"></script>
+    </body>
+
+</html>

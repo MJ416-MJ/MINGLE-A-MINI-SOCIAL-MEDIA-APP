@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Mingle | Sign In
+        </title>
+        <link rel="stylesheet" href="stylesignup.css"> 
+    </head>
+
+    <body style="font-family: tahoma; background-color: #d9ebf9;">
+        <div id="MainBar">
+            <span id="WebName">Mingle</span><br>
+            <span id="slogan">Talk less, connect more</span><br>
+            <span id="WebName">Join the Buzz!</span><br>
+        </div>
+
+        <div id="SignUpBar">
+            <span style="font-weight: bold; color:#fed4c6"> Sign Up to Mingle</span><br><br>
+
+            <form id ="SignUpForm" autocomplete="off" method="post" action="/Register/SignUp/Assets/register_process.php">
+            <input type="text" id="first_namebox" name="first_name" placeholder="First name"><br><br>
+            <input type="text" id="last_namebox" name="last_name" placeholder="Last name"><br><br>
+
+            <select id="mySelect" onchange="updateSelectColor(this)"name="gender">
+                <option disabled selected >Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select><br><br>
+            <script>
+                function updateSelectColor(selectElem) {
+                selectElem.style.color = 'black';
+                }
+            </script>
+            <input type="text" name="username" id="userbox"placeholder="Username"><br><br>
+
+            <input type="text" id="emailBox"name="email" placeholder="Email"><br><br>
+
+            <input type="password" id="passwordBox"name="password" placeholder="Password"><br><br>
+            <input type="password" id="retype_passbox" name="retype_pass"placeholder="Retype Password"><br><br>
+
+            <button type="submit" id="SignUpButton" value="Sign Up">Sign Up</button><br><br>
+            <div id="regMessage" style="color: red; min-height: 20px; font-weight: bold;"></div>
+            </form>
+            <a href="/Register/Password_Reset/Forgot_Password/forgottenPass.html">
+                <span style="font-size:13px;">Forgotten password ?</span><br><br>
+            </a>
+            <span style="font-size:13px;">Already have an account? </span>
+            <a href="/Register/Login/login.html">
+                <span style="font-size:13px;"> Log In</span><br><br><br>
+            </a>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/Register/SignUp/Assets/register.js"></script> 
+    </body>
+
+</html>

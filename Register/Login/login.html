@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Mingle | Log In
+        </title>
+        <link rel="stylesheet" href="stylelogin.css">
+    </head>
+
+    <body style="font-family: tahoma; background-color: #d9ebf9;">
+        <div id="MainBar">
+            <span id="WebName">Mingle</span><br>
+            <span id="slogan">Talk less, connect more</span><br>
+            <span id="WebName">Join the Buzz!</span><br>
+        </div>
+
+        <div id="LoginBar">
+            <span style="font-weight: bold; color:#ffcebd"> Log in to Mingle</span><br><br>
+            
+            <form id ="loginForm" autocomplete="off" method="post" action="/Register/Login/Assets/login_process.php">
+                <input type="text" name="identifier" id="emailBox" placeholder="Email"><br><br>
+                <input type="password" name="password" id="passwordBox" placeholder="Password"><br><br>
+                <button type="submit" id="LogInButton">Log in</button><br><br>
+                <div id="loginMessage" style="color: red; min-height: 20px; font-weight: bold;"></div>
+
+            </form>
+            <a href="/Register/Password_Reset/Forgot_Password/forgottenPass.html">
+                <span style="font-size:13px;">Forgotten password ?</span><br><br>
+            </a>
+            <span style="font-size:13px;">Don't have an account ?</span>
+            <a href="/Register/SignUp/signUp.html">
+                <span style="font-size:13px;">Sign Up</span><br><br><br>
+            </a>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/Register/Login/Assets/login.js"></script>
+    </body>
+
+</html>

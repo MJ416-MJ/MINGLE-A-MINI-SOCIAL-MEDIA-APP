@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logoSloganWrapper">
+      <img src="/PROJECT/General/logo.png" alt="logo" class="logo">
+      <p id="slogan">Talk less, connect more.</p>
+    </div>
+    <h2 class="heading">My Profile</h2>
+    <p class="joinBuzzText">Join the Buzz!</p>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Navigation Bar -->
+    <button class="menu-toggle" onclick="toggleNavbar()">☰ Menu</button>
+    <div class="navbar">
+      <a href="/PROJECT/Homepage/HomePage.html" class="link">🏠Home</a>
+      <a href="/PROJECT/Notifications/Notifications.html" class="link notification-link" style="position: relative;">
+  🔔
+  <span id="notifBadge" class="notification-badge" style="display: none;">•</span>
+</a>
+
+      <a href="ProfilePage.html" class="link">👤My Profile</a>
+      <div class="searchBar" style="position: relative;">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Find" id="searchInput" autocomplete="off">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+    </div>
+
+    <!-- Profile + About Wrapper -->
+    <div class="wrapper">
+      <div class="profileArea">
+        <img src="/PROJECT/General/pp.jpg" alt="profile picture" class="profilePic">
+        <div class="profileDetails">
+          <div class="profileInfo">
+            <h5 class="userName" id="profName">@ ...</h5>
+            <p id="locationText">📍...</p>
+          </div>
+          <div class="userStats">
+            <div class="userStat">
+              <a id="postCount" class="number">0</a>
+              <a id="postLabel" class="label">Posts</a>
+            </div>
+
+            <div class="userStat">
+              <a id="friendCount" class="number" onclick="openFriendsModal()">0</a>
+              <a id="friendLabel" class="label" onclick="openFriendsModal()">Friends</a>
+            </div>
+
+            <div class="userStat">
+              <a id="commentCount" class="number">0</a>
+              <a id="commentLabel" class="label">Comments</a>
+
+
+              </div>
+          </div>
+        </div>
+      </div>
+
+     <div class="aboutSection">
+       <div class="AboutMeContainer">
+        <p class="AboutText"><b>Full Name:</b> <span id="displayFullName">...</span></p>
+        <p class="AboutText"><b>About:</b> <span id="aboutText">N/A</span></p>
+      </div>
+      <div class="editButton">
+          <button class="editBtn" onclick="openModal()">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Posts and Friends Wrapper -->
+    <div class="Post-and-friend-wrapper">
+
+      <!-- Posts -->
+      <div class="posts">
+        <h4>My Posts</h4>
+        <!-- Toggle Post Button -->
+        <button id="togglePostBtn" class="postToggleBtn">➕ Create Post</button>
+
+      <!-- Hidden Create Post Box -->
+      <div id="createPostBox" class="create-post-box" style="display: none;">
+        <form id="createPostForm">
+          <textarea id="postInput" placeholder="Share a thought..." required></textarea>
+          <button type="submit" id="postBtn" onclick="createPost()">Post</button>
+        </form>
+      </div>
+
+        <div id="userPostsContainer">
+          <p class="no-posts-placeholder">Loading posts...</p>
+        </div>
+      </div>
+
+      <!-- Friends -->
+    <div class="friend-section">
+      <h3 style="color: #4682b4; font-size: 20px;">Mutual Friends</h3>
+      <div id="friendListPreview" class="friend"></div>
+      <div class="view-more">
+    <a href="#" class="view-more-link" onclick="openMutualFriendsModal()">View all mutual friends →</a>
+  </div>
+</div>
+
+    </div> <!-- End of Post-and-friend-wrapper -->
+
+    <!-- Logout + Footer -->
+    <a href="/socialmedia/logout.php" class="logOutLink">Log Out</a>
+    <footer><p>&copy; 2025 Mingle. All rights reserved.</p></footer>
+  </div> <!-- End of container -->
+
+  <!-- Include Modals (Edit, Friends, Likes, Comments) -->
+  <!-- ... (unchanged content for modals) ... -->
+<!-- Edit Profile Modal -->
+<div id="modal" class="edit-modal">
+  <div class="modal-content">
+    <h4>Edit Profile</h4>
+
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="firstName" />
+
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="lastName" />
+
+    <label for="loc">Location</label>
+    <input type="text" id="loc" name="loc" />
+
+    <label for="about">About</label>
+    <textarea id="about" name="about" rows="4"></textarea>
+
+    <button class="save-Btn" onclick="saveProfile()">Save</button>
+    <button class="close-Btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<div id="likesModal" class="likes-modal">
+  <div class="likes-modal-content">
+    <span class="closeLikesModalBtn">&times;</span>
+    <h3>Liked by</h3>
+    <ul id="likesList"></ul>
+  </div>
+</div>
+<!-- FRIENDS MODAL -->
+<div id="friendsModal" class="friends-modal">
+  <div class="likes-modal-content">
+    <span class="closeFriendsModalBtn">&times;</span>
+    <h4 id="friendsModalTitle">Friends</h4>
+    <ul id="friendsList"></ul>
+  </div>
+</div>
+
+
+<!-- COMMENTS MODAL -->
+<div id="commentsModal" class="comments-modal" style="display: none;">
+  <div class="likes-modal-content">
+    <span class="closeCommentsModalBtn" style="cursor:pointer;">&times;</span>
+    <h4>Comments</h4>
+
+    <ul id="commentsList" style="margin-bottom: 10px;"></ul>
+
+    <textarea id="newCommentInput" placeholder="Write a comment..." rows="2" style="width: 100%;"></textarea>
+    <div style="margin-top: 5px;">
+      <button id="submitCommentBtn">Submit</button>
+      <button id="deleteCommentBtn">🗑️</button>
+      <select id="deleteCommentDropdown" style="display:none; margin-left: 8px;"></select>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- Script -->
+  <script src="/PROJECT/Profilepage/Assets/profile.js"></script>
+  <script src="/Posts/Post_Assets/Post_Creation/createPost.js"></script>
+  <script src="/Posts/Post_Assets/Post_Fetch/Profilepage/fetchuserposts.js"></script>
+  <script src ="/PROJECT/Profilepage/Assets/saveprofile.js"></script>
+  <script src="/Posts/Post_Assets/Likes/Like_count/allLikes.js"></script>
+  <script src="/Posts/Post_Assets/Post_Deletion/deletePost.js"></script>
+  <script src="/Posts//Post_Assets/Likes/like.js"></script>
+  <script src ="/Posts/All_ProfileStats/loadCounts.js"></script>
+  <script src ="/PROJECT/General/Modal/Modals.js"></script>
+  <script src ="/PROJECT/General/search_user.js"></script>
+  <script src ="/Posts//All_ProfileStats/loadFriends.js"></script>
+  <script src ="/PROJECT/Notifications/Notifications_Assets/fetch_notificationcountjs.js"></script>
+  <script src ="/PROJECT/Notifications/Notifications_Assets/notifications.js"></script>
+  
+
+  
+ 
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notifications</title>
+  <link rel="stylesheet" href="notifications.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logoSloganWrapper">
+      <img src="/PROJECT/General/logo.png" alt="TalkNet Logo" class="logo" />
+      <p id="slogan">Talk less, connect more.</p>
+    </div>
+    <h2 class="heading">Notifications</h2>
+    <p class="joinBuzzText">Join the Buzz!</p>
+  </header>
+
+  <!-- Navigation -->
+  <button id="menuToggle" class="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
+  <nav class="navbar" role="navigation">
+    <a href="/PROJECT/Homepage/HomePage.html" class="link">🏠 Home</a>
+    <a href="Notifications.html" class="link active">🔔 Notifications</a>
+    <a href="/PROJECT/Profilepage/ProfilePage.html" class="link">👤 My Profile</a>
+
+    <!-- Search Bar -->
+    <div class="searchBar">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Find" id="searchInput" autocomplete="off">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="body-content">
+    <div class="notifications-Container" id="notificationsContainer">
+      <!-- Notification items will be inserted dynamically here -->
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="/PROJECT/Notifications/Notifications_Assets/notifications.js" defer></script>
+  <script src="/PROJECT/General/search_user.js" defer></script>
+</body>
+</html>

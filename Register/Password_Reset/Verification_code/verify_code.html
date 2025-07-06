@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Code | Mingle</title>
+    <link rel="stylesheet" href="styleverify.css">
+</head>
+<body style="font-family: Tahoma; background-color: #d9ebf9;">
+    <div id="MainBar">
+        <span id="WebName">Mingle</span><br>
+        <span id="slogan">Talk less, connect more</span><br>
+        <span id="WebName">Join the Buzz!</span><br>
+    </div>
+
+    <div id="VerifyBar">
+        <span style="font-weight: bold; color: #fed4c6">Enter Your Verification Code</span><br><br>
+
+        <form id="VerifyForm" autocomplete="off" action="javascript:void(0);">
+            <input type="text" name="email" id="emailBox" placeholder="Email"><br><br>
+            <input type="text" name="code" id="codeBox" placeholder="6-digit Code"><br><br>
+            <button type="submit" id="VerifyButton">Verify</button><br><br>
+            <div id="feedbackMessage" style="color: red; min-height: 20px; font-weight: bold;"></div>
+            
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/Register/Password_Reset/Verification_code/Assets/verify_code.js"></script>
+</body>
+</html>

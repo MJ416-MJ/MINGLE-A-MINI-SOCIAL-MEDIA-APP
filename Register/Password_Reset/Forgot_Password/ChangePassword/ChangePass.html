@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Mingle | Forgotten password
+        </title>
+        <link rel="stylesheet" href="stylechangepass.css">
+    </head>
+
+    <body style="font-family: tahoma; background-color: #d9ebf9;">
+        <div id="MainBar">
+            <span id="WebName">Mingle</span><br>
+            <span id="slogan">Talk less, connect more</span><br>
+            <span id="WebName">Join the Buzz!</span><br>
+        </div>
+
+        <div id="ResetBar">
+            <span style="font-weight: bold; color:#fed4c6"> Forgotten password</span><br><br>
+
+            <form id ="ResetForm" autocomplete="off" method="post" action="/Register/Password_Reset/Assets/reset_password_process.php">
+                <input type ="hidden" name="token" id="tokenField">
+                <input type="password" name="new_password"id="passBox" placeholder="New Password"><br><br>
+                <input type="password" name="confirm_password" id="newpassBox" placeholder="Retype Password"><br><br>
+                <button type="submit" id="ResetButton" value="Submit">Submit</button><br><br>
+                <div id ="feedbackMessage"style="color: red; min-height: 20px; font-weight: bold;"></div>
+            </form>
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/Register/Password_Reset/Assets/reset-token.js"></script>
+        <script>
+    // Prevent browser back button from working on this page
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+</script>
+
+    </body>
+
+</html>

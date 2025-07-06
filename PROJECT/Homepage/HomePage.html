@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="homePage.css">
+</head>
+<body>
+    <!-- Header with logo, slogan and heading -->
+    <div class="header">
+        <div class="logoSloganWrapper"><!--Wrapper for styling the logo and slogan together-->
+            <img src="/PROJECT/General/logo.png" alt="logo" class="logo"><!--Logo image-->
+            <p id="slogan">Talk less, connect more.</p><!--slogan-->
+        </div>
+        <h2 class="heading">Home</h2><!--page heading-->
+        <p class="joinBuzzText">Join the Buzz!</p>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <button class="menu-toggle" onclick="toggleNavbar()">☰ Menu</button><!--Menu button for smaller screens-->
+        <div class="navbar" id="navbar"><!--Navigation bar with links to other pages-->
+            <a href="HomePage.html" class="link">🏠Home</a>
+            <a href="/PROJECT/Notifications/Notifications.html" class="link notification-link" style="position: relative;">
+  🔔
+  <span id="notifBadge" class="notification-badge" style="display: none;">•</span>
+</a>
+
+            <a href="/PROJECT/Profilepage/ProfilePage.html" class="link">👤My Profile</a>
+           <div class="searchBar" style="position: relative;">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Find" id="searchInput" autocomplete="off">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+
+        <!-- Main user feed where user is able to view everyone's posts -->
+        <div class="userFeed">
+
+            <!-- Section where user can make a new post from -->
+            <div class="post-container">
+                    <textarea id="postInput" placeholder="Share a thought..." style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;"></textarea>
+                    <button id="postBtn" onclick="createPost()">Post</button><!--Button that allows user to make a post-->
+            </div>
+            
+            <div id="postContainer"></div><!--Container that will hold any new post the user makes-->
+
+        </div> 
+        <div class="endOfPage"><!--End of page with log out link and copyright information-->
+            <a href="/socialmedia/logout.php" class="logOutLink">Log Out</a>
+            <footer><p>&copy; 2025 Mingle.  All rights reserved.</p></footer>
+        </div>
+    </div>
+
+    <!-- Likes Modal -->
+<div id="likesModal" class="edit-modal" style="display: none;">
+  <div class="modal-content">
+    <h4>Liked by</h4>
+    <ul id="likesList"></ul>
+    <button class="close-Btn" onclick="closeLikesModal()">Close</button>
+  </div>
+</div>
+
+<script src="/PROJECT/General/search_user.js"></script>
+<script src="/Posts/Post_Assets/Post_Fetch/Homepage/fetchPosts.js"></script>      <!-- provides fetchPosts() -->
+<script src="/Posts/Post_Assets/Post_Creation/createPost.js"></script>      <!-- provides createPost() -->
+<script src="/Posts//Post_Assets/Likes/like.js"></script>           <!-- optional like AJAX -->
+<script src ="/PROJECT/Notifications/Notifications_Assets/notifications.js"></script>
+
+<script src="/PROJECT/Homepage/Homepage_Assets/homePage.js"></script>               <!-- THIS script (final) -->
+<script src ="/PROJECT/Notifications/Notifications_Assets/fetch_notificationcountjs.js"></script>
+</body>
+</html>

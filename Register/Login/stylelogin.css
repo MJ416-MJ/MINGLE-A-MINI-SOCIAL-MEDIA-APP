@@ -1,0 +1,94 @@
+body{
+    background-image: url('/Register/theblue.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+#MainBar{
+    height:100px;
+    background:linear-gradient(to left,#84b9ee, #30a2ff);
+    color: #e8fcfc;
+    padding: 4px;
+    }
+#TitleBar{
+    background-color: #ff7f50;
+    width: 70px;
+    text-align: center;
+    padding: 4px;
+    border-radius: 4px;
+    float: right;
+    }
+#LoginBar {
+    background-image: url('/Register/theblue.png');
+    background-size: cover;
+    background-position: center;
+                
+    width: 700px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    padding-top: 50px;
+    z-index: 1;
+    }
+#emailBox{
+    height: 40px;
+    width: 300px;
+    border-radius: 30px;
+    border: solid 2px #cacaca;
+    padding: 8px;
+    font-size: 15px;
+    }
+#emailBox:focus{
+    border-color: #ff7f50;
+    outline: none;
+    }
+#passwordBox{
+    height: 40px;
+    width: 300px;
+    border-radius: 30px;
+    border: solid 2px #cacaca;
+    padding: 8px;
+    font-size: 15px;
+    }
+#passwordBox:focus{
+    border-color: #ff7f50;
+    outline: none;
+    }
+#LogInButton {
+    width: 310px;
+    height: 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    background-color: #ff7f50;
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    line-height: 40px; /* vertically center for <button> */
+    cursor: pointer;
+}
+
+#WebName{
+    color:#f7c0ae;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 10px;
+    }
+#slogan{
+    color:#ffd8cb;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 890px;
+    }
+a {
+    color: #ece4e2;
+    }
+
+a:hover {
+    color: #ffcab8; 
+    }

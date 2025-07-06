@@ -4,7 +4,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="assets/login.js"></script>
 </head>
-<body>
+<!-- <body>
   <h2>Login</h2>
   <form id="loginForm" autocomplete="off">
     <input name="identifier" placeholder="Email or Username" required><br>
@@ -12,5 +12,5 @@
     <button type="submit">Log In</button>
     <div id="loginMessage"></div>
   </form>
-</body>
+</body> -->
 </html>
