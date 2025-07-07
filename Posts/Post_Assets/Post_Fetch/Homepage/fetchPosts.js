@@ -22,7 +22,7 @@ function fetchPosts() {
     <div class="postText" style="flex: 1;">
       <div class="userName-Timeline">
         <div class="userName">
-          <a href="${post.is_owner ? 'PROJECT/Profilepage/ProfilePage.html' : 'PROJECT/OtherUsers/OtherUsers.html?username=' + encodeURIComponent(post.username)}" class="profile-link"><b>@${post.username}</b></a>
+          <a href="${post.is_owner ? '/PROJECT/Profilepage/ProfilePage.html' : '/PROJECT/OtherUsers/OtherUsers.html?username=' + encodeURIComponent(post.username)}" class="profile-link"><b>@${post.username}</b></a>
         </div>
         <span class="postTimestamp">• ${formatRelativeTime(post.created_at)}</span>
       </div>

@@ -11,11 +11,10 @@ if (!isset($_SESSION['user_id'])) {
 $userId = $_SESSION['user_id'];
 
 try {
-    $stmt = $pdo->prepare("SELECT COUNT(*) as unread_count FROM notifications WHERE user_id = :user_id AND is_read = 0");
+    $stmt = $pdo->prepare("UPDATE notifications SET is_read = 1 WHERE user_id = :user_id AND is_read = 0");
     $stmt->execute(['user_id' => $userId]);
-    $count = $stmt->fetch(PDO::FETCH_ASSOC)['unread_count'];
 
-    echo json_encode(['status' => 'success', 'count' => $count]);
+    echo json_encode(['status' => 'success', 'message' => 'Notifications marked as read']);
 } catch (PDOException $e) {
-    echo json_encode(['status' => 'error', 'message' => 'DB error']);
+    echo json_encode(['status' => 'error', 'message' => 'DB error: ' . $e->getMessage()]);
 }

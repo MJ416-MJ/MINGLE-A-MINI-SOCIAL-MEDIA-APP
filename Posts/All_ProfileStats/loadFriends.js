@@ -38,7 +38,7 @@ function loadFriendsPreview() {
         friendRow.innerHTML = `
           <img src="${friend.profile_pic || '/Assets/defaultpic.jpg'}" alt="profile picture" class="friendPP">
           <p class="friendName">
-            <b><a href="PROJECT/OtherUsers/OtherUsers.html?username=${encodeURIComponent(friend.username)}">@${friend.username}</a></b>
+            <b><a href="/PROJECT/OtherUsers/OtherUsers.html?username=${encodeURIComponent(friend.username)}">@${friend.username}</a></b>
           </p>`;
         previewContainer.appendChild(friendRow);
       });
@@ -48,7 +48,7 @@ function loadFriendsPreview() {
         const li = document.createElement("li");
         li.innerHTML = `
           <img src="${friend.profile_pic || '/Assets/defaultpic.jpg'}" class="friendPP">
-          <a href="PROJECT/OtherUsers/OtherUsers.html?username=${encodeURIComponent(friend.username)}">@${friend.username}</a>`;
+          <a href="/PROJECT/OtherUsers/OtherUsers.html?username=${encodeURIComponent(friend.username)}">@${friend.username}</a>`;
         modalList.appendChild(li);
       });
     })

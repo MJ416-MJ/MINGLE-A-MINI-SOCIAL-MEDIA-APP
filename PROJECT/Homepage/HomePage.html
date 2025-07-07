@@ -22,10 +22,14 @@
         <button class="menu-toggle" onclick="toggleNavbar()">☰ Menu</button><!--Menu button for smaller screens-->
         <div class="navbar" id="navbar"><!--Navigation bar with links to other pages-->
             <a href="HomePage.html" class="link">🏠Home</a>
-            <a href="/PROJECT/Notifications/Notifications.html" class="link notification-link" style="position: relative;">
-  🔔
-  <span id="notifBadge" class="notification-badge" style="display: none;">•</span>
-</a>
+            <a href="/PROJECT/Notifications/Notifications.html" class="link notification-link">
+            <span class="notif-icon-wrapper">
+                🔔
+                <span id="notifBadge" class="notification-badge" style="display: none;">•</span>
+            </span>
+            Notifications
+            </a>
+
 
             <a href="/PROJECT/Profilepage/ProfilePage.html" class="link">👤My Profile</a>
            <div class="searchBar" style="position: relative;">
@@ -69,6 +73,6 @@
 <script src ="/PROJECT/Notifications/Notifications_Assets/notifications.js"></script>
 
 <script src="/PROJECT/Homepage/Homepage_Assets/homePage.js"></script>               <!-- THIS script (final) -->
-<script src ="/PROJECT/Notifications/Notifications_Assets/fetch_notificationcountjs.js"></script>
+<script src ="/PROJECT/Notifications/Notifications_Assets/fetch_notificationcount.js"></script>
 </body>
 </html>

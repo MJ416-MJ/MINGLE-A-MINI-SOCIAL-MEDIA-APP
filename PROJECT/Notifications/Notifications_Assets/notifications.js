@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         container.appendChild(notifBox);
       });
+
+      markNotificationsAsRead();
+
     })
     .catch(err => {
       console.error("Failed to load notifications:", err);
