@@ -142,7 +142,14 @@ function openCommentsModal(postId) {
 }
 
 function loadTotalCommentsCount() {
-  fetch('/Posts/Post_Assets/Comments/Comments_count/get_total_comments.php', { credentials: 'include' })
+  const params = new URLSearchParams(window.location.search);
+  const viewedUsername = params.get("username"); // this is 'ahmed' on OtherUsers.html
+
+  const url = viewedUsername 
+    ? `/Posts/Post_Assets/Comments/Comments_count/get_total_comments.php?username=${encodeURIComponent(viewedUsername)}`
+    : '/Posts/Post_Assets/Comments/Comments_count/get_total_comments.php';
+
+  fetch(url, { credentials: 'include' })
     .then(res => res.json())
     .then(data => {
       if (data.status === 'success') {
@@ -157,6 +164,7 @@ function loadTotalCommentsCount() {
       }
     });
 }
+
 
 function updatePerPostCommentCount(postId) {
   const btn = document.querySelector(`.commentBtn[data-post-id="${postId}"]`);
