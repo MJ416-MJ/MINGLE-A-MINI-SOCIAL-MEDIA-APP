@@ -11,7 +11,7 @@ function deleteComment(commentId, postId) {
     .then(data => {
       if (data.status === "success") {
         openCommentsModal(postId); // Refresh list
-        // 🔄 Decrease count
+  
         const btn = document.querySelector(`.commentBtn[data-post-id="${postId}"]`);
         if (btn) {
           const match = btn.textContent.match(/\d+/);
