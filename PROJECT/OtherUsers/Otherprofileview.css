@@ -652,7 +652,7 @@ body{
 .Post-and-friend-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;  /* ✅ This ensures top alignment */
+  align-items: flex-start;  
   flex-wrap: nowrap;
   gap: 140px;
   margin: 30px auto;
