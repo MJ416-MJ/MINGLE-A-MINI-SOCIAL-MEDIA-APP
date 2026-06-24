@@ -24,7 +24,7 @@ try {
 
     $sessionUserId = $_SESSION['user_id'] ?? 0;
 
-    // ✅ Subqueries to avoid row multiplication
+    
     $stmt = $pdo->prepare("
         SELECT 
             p.post_id,
@@ -34,18 +34,18 @@ try {
             u.username,
             u.profile_pic,
 
-            -- 🧮 Accurate like count
+            
             (SELECT COUNT(*) FROM likes WHERE post_id = p.post_id) AS like_count,
 
-            -- 🧮 Accurate comment count
+            
             (SELECT COUNT(*) FROM comments WHERE post_id = p.post_id) AS comment_count,
 
-            -- ❤️ Check if the session user liked this post
+    
             EXISTS (
                 SELECT 1 FROM likes WHERE post_id = p.post_id AND user_id = :session_user
             ) AS is_liked,
 
-            -- 🗑️ Can delete if this is user's own post
+        
             CASE 
                 WHEN p.user_id = :session_user THEN 1
                 ELSE 0
