@@ -15,11 +15,11 @@ $stmt->execute([$token]);
 $user = $stmt->fetch();
 
 if ($user) {
-    // ✅ Token is valid, redirect to ChangePass.html with token
+    
     header("Location: /Register/Password_Reset/Forgot_Password/ChangePassword/ChangePass.html?token=" . urlencode($token));
     exit;
 } else {
-    // ❌ Invalid or expired token
+    
     echo "<script>alert('This reset link is invalid or has expired.'); window.location.href='/Register/Login/login.html';</script>";
     exit;
 }
