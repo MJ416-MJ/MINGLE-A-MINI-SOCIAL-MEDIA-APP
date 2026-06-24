@@ -7,11 +7,11 @@ $(function(){
       data: $(this).serialize(),
       dataType: 'json',
       xhrFields: {
-        withCredentials: true  // ✅ THIS is what saves the session
+        withCredentials: true  
       },
       success: function(res) {
         if (res.status === 'success') {
-          // ✅ Redirect to your homepage
+          
           window.location = '/PROJECT/Homepage/HomePage.html';
         } else {
           $('#loginMessage').text(res.message);
