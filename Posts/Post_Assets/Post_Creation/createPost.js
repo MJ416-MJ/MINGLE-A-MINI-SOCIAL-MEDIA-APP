@@ -5,7 +5,7 @@ function createPost() {
 
   fetch('/Posts/Post_Assets/Post_Creation/create_post.php', {
     method: 'POST',
-    credentials: 'include', // ✅ THIS is required for session to work
+    credentials: 'include', 
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
