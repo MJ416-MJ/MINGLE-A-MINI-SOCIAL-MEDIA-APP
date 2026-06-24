@@ -23,17 +23,17 @@ if (isset($_GET['username'])) {
 }
 
 try {
-    // ✅ Count posts by the user
+    
     $stmt1 = $pdo->prepare("SELECT COUNT(*) FROM posts WHERE user_id = ?");
     $stmt1->execute([$userId]);
     $postCount = (int)$stmt1->fetchColumn();
 
-    // ✅ Count followers (users who follow this user)
+    
     $stmt2 = $pdo->prepare("SELECT COUNT(*) FROM followers WHERE following_id = ?");
     $stmt2->execute([$userId]);
     $followerCount = (int)$stmt2->fetchColumn();
 
-    // ✅ Count comments received on this user's posts
+
     $stmt3 = $pdo->prepare("
         SELECT COUNT(c.comment_id)
         FROM comments c
