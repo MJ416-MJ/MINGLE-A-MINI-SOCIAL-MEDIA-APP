@@ -49,13 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
         postHeader.appendChild(profilePic);
         postHeader.appendChild(userInfo);
 
-        // 🧩 Post Content
+        
         const postTextDiv = document.createElement("div");
         postTextDiv.className = "postText";
         const postContent = document.createElement("p");
         postContent.innerText = post.content;
 
-        // 🧩 Actions: Like + Comment
+        
         const actionsWrapper = document.createElement("div");
         actionsWrapper.className = "post-actions";
 
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         actionsWrapper.appendChild(likeBtn);
         actionsWrapper.appendChild(commentBtn);
 
-        // 🧩 View Likes + Delete Button
+        
         const linkWrapper = document.createElement("div");
         linkWrapper.className = "link-actions";
         linkWrapper.style.display = "flex";
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
           linkWrapper.appendChild(deleteBtn);
         }
 
-        // 🧩 Assemble
+        
         postTextDiv.appendChild(postContent);
         postTextDiv.appendChild(actionsWrapper);
         postTextDiv.appendChild(linkWrapper);
