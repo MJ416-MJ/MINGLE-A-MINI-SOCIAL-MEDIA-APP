@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         postDiv.className = "post";
         postDiv.setAttribute("data-post-id", post.post_id);
 
-        // 🧩 Post Header
+      
         const postHeader = document.createElement("div");
         postHeader.className = "post-header";
 
