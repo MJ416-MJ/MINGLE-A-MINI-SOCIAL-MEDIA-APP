@@ -6,7 +6,6 @@ function toggleNavbar() {
 
 // Global click handler for Like, Comment toggle, and Submit
 document.addEventListener("click", function (e) {
-  // ✅ Like Button Toggle & AJAX
   if (e.target.classList.contains("likeBtn")) {
     const postId = e.target.dataset.id;
     if (postId) {
@@ -33,8 +32,6 @@ document.addEventListener("click", function (e) {
   }
 
 });
-
-// ✅ On page load: check session and fetch posts
 document.addEventListener("DOMContentLoaded", () => {
   fetch('/socialmedia/Database/Database_Sessions/session_info.php', {
     credentials: 'include'
